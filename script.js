@@ -8,7 +8,7 @@ function createGrid(width){
             console.log(squareWidth);
             square.style.width = `${squareWidth}px`;
             console.log(square.style.width)
-            square.style.border = "solid 0.01px #d9d9d9";
+            square.style.border = "solid 0.01px #e9e9e9";
            
             square.style.height = `${squareWidth}px`;
             container1.appendChild(square);
@@ -44,6 +44,7 @@ function removeGrid(){
 function clearGrid(){
     squares.forEach((square)=>{
         square.style.backgroundColor = "white";
+        square.style.border ="solid 0.01px #e9e9e9";
     });
 }
 
