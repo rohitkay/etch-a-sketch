@@ -20,15 +20,19 @@ function createGrid(width){
     }
 }
 
+function paint(){
+    squares.forEach((square) => {
+        square.addEventListener("mouseenter",()=>{
+            square.style.backgroundColor = "grey";
+        })   
+    });
+}
+
 
 
 createGrid(50);
-
 squares = document.querySelectorAll(".square");
+paint();
 
-squares.forEach((square) => {
-    square.addEventListener("mouseenter",()=>{
-    square.style.backgroundColor = "blue";
-})
-    
-});
+
+
