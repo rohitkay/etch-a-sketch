@@ -18,6 +18,7 @@ function createGrid(width){
         }
         
     }
+    squares = document.querySelectorAll(".square");
 }
 
 function paint(){
@@ -28,11 +29,29 @@ function paint(){
     });
 }
 
+function removeGrid(){
+    squares.forEach((square)=>{
+        container1.removeChild(square);
+    });
+}
 
+createGrid(16);
 
-createGrid(50);
-squares = document.querySelectorAll(".square");
 paint();
-
-
+const removeButton = document.querySelector(".newGridButton");
+removeButton.addEventListener("click",()=>{
+    
+    let option = prompt("Please enter how many squares wide")
+    if (option != null){
+        if (option > 100){
+            alert("Needs to be less than 100");
+        }
+        else{
+            removeGrid();
+            createGrid(option);
+            
+        }
+    }
+    paint();
+});
 
