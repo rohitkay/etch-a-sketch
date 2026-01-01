@@ -8,16 +8,27 @@ function createGrid(width){
             console.log(squareWidth);
             square.style.width = `${squareWidth}px`;
             console.log(square.style.width)
-            square.style.border = "solid 0.01px grey";
-            square.style.backgroundColor = "yellow"
+            square.style.border = "solid 0.01px #d9d9d9";
+           
             square.style.height = `${squareWidth}px`;
             container1.appendChild(square);
             square.style.padding = "0px"
             square.style.margin = "0px"
-            
+            square.setAttribute("class","square")
         }
         
     }
 }
 
-createGrid(140);
+
+
+createGrid(50);
+
+squares = document.querySelectorAll(".square");
+
+squares.forEach((square) => {
+    square.addEventListener("mouseenter",()=>{
+    square.style.backgroundColor = "blue";
+})
+    
+});
