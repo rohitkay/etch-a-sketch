@@ -37,11 +37,17 @@ function removeGrid(){
     });
 }
 
+function clearGrid(){
+    squares.forEach((square)=>{
+        square.style.backgroundColor = "white";
+    });
+}
+
 function randomColor(){
     var letters = '0123456789ABCDEF';
     var color = "#";
     for (var i =0; i<6;i++){
-        color += letters[Math.floor(Math.random()*17)];
+        color += letters[Math.floor(Math.random()*16)];
     }
     return color;
 }
@@ -49,8 +55,8 @@ function randomColor(){
 createGrid(16);
 
 paint();
-const removeButton = document.querySelector(".newGridButton");
-removeButton.addEventListener("click",()=>{
+const newGridButton = document.querySelector(".newGridButton");
+newGridButton.addEventListener("click",()=>{
     
     let option = prompt("Please enter how many squares wide")
     if (option != null){
@@ -66,3 +72,7 @@ removeButton.addEventListener("click",()=>{
     paint();
 });
 
+const clearButton = document.querySelector(".clearButton");
+clearButton.addEventListener("click",()=>{
+    clearGrid();
+});
