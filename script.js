@@ -22,10 +22,14 @@ function createGrid(width){
 }
 
 function paint(){
+    
     squares.forEach((square) => {
+        let entry = 0.1;
         square.addEventListener("mouseenter",()=>{
             let randomCol= randomColor();
+            entry += 0.1;
             square.style.backgroundColor = `${randomCol}`;
+            square.style.opacity = `${entry}`;
             console.log(randomCol);
         })   
     });
