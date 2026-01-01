@@ -24,7 +24,9 @@ function createGrid(width){
 function paint(){
     squares.forEach((square) => {
         square.addEventListener("mouseenter",()=>{
-            square.style.backgroundColor = "grey";
+            let randomCol= randomColor();
+            square.style.backgroundColor = `${randomCol}`;
+            console.log(randomCol);
         })   
     });
 }
@@ -33,6 +35,15 @@ function removeGrid(){
     squares.forEach((square)=>{
         container1.removeChild(square);
     });
+}
+
+function randomColor(){
+    var letters = '0123456789ABCDEF';
+    var color = "#";
+    for (var i =0; i<6;i++){
+        color += letters[Math.floor(Math.random()*17)];
+    }
+    return color;
 }
 
 createGrid(16);
